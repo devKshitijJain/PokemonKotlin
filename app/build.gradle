@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "in.co.kshitijjain.pokemonkotlin"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation supportLibs
+    implementation kotlinLibs
+    implementation networkLibs
+    implementation rxJavaLibs
+    implementation otherLibs
+
+    // APT dependencies
+    kapt annotationProcessorLibs
+    kaptTest daggerCompiler
+    kaptTest daggerAndroidProcessor
+    kaptAndroidTest daggerCompiler
+    kaptAndroidTest daggerAndroidProcessor
+
+    testImplementation unitTestLibs
+    androidTestImplementation androidTestsLibs
+    testImplementation unitTestLibs
+
+    // Use Core Inside APP
+    implementation project(':core')
+}
+
+tasks.matching { it instanceof Test }.all {
+    testLogging.events = ["failed", "passed", "skipped"]
+}

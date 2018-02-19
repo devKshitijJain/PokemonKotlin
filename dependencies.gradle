@@ -1,0 +1,106 @@
+ext {
+    versions = [
+            kotlin       : '1.2.21',
+            support      : "27.0.2",
+            moshi        : "1.5.0",
+            okHttp       : "3.8.1",
+            retrofit     : '2.3.0',
+            gson         : '2.8.1',
+            dagger       : '2.14.1',
+            rxKotlin     : '2.2.0',
+            rxAndroid    : '2.0.1',
+            timber       : '4.6.0',
+            espresso     : '3.0.1',
+            testRunner   : '1.0.1',
+            hamcrest     : '1.4-atlassian-1',
+            mockito      : '2.13.0',
+            junit        : '4.12',
+            assertj      : '1.2.0',
+            leakcanary   : '1.5.4',
+            multiDex     : '1.0.2',
+            mockitoKotlin: '1.5.0',
+            rxIdler      : '0.9.0'
+    ]
+
+    mockito = [mockito: "org.mockito:mockito-core:$versions.mockito"]
+    junit = [junit: "junit:junit:$versions.junit"]
+
+    supportDeps = [
+            cardView         : "com.android.support:cardview-v7:$versions.support",
+            appcompatV7      : "com.android.support:appcompat-v7:$versions.support",
+            design           : "com.android.support:design:$versions.support",
+            vectorDrawable   : "com.android.support:support-vector-drawable:$versions.support",
+            recyclerView     : "com.android.support:recyclerview-v7:$versions.support",
+            supportAnnotation: "com.android.support:support-annotations:$versions.support",
+            multiDex         : "com.android.support:multidex:$versions.multiDex"
+    ]
+
+    kotlinDeps = [
+            kotlinCore: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+    ]
+
+    retrofit = [
+            retrofit      : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            rxAdapter2    : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+            moshiConverter: "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+    ]
+
+    okHttp = [
+            logger: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
+            okhttp: "com.squareup.okhttp3:okhttp:$versions.okHttp"
+    ]
+
+    rxJava = [
+            rxKotlin : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+    ]
+
+    moshi = [
+            moshi: "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+    ]
+
+    unitTest = [
+            harcrestCore       : "org.hamcrest:hamcrest-core:$versions.hamcrest",
+            harmcrestLib       : "org.hamcrest:hamcrest-library:$versions.hamcrest",
+            hamcrestIntegration: "org.hamcrest:hamcrest-integration:$versions.hamcrest",
+            supportAnnotation  : "com.android.support:support-annotations:$versions.support",
+            assertj            : "com.squareup.assertj:assertj-android:$versions.assertj",
+            kotlinTest         : "org.jetbrains.kotlin:kotlin-test:$versions.kotlin",
+            kotlinJunit        : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
+            mockitoKotlin      : "com.nhaarman:mockito-kotlin:$versions.mockitoKotlin"
+
+    ] + junit + mockito
+
+    androidTests = [
+            mockitoAndroid    : "org.mockito:mockito-android:$versions.mockito",
+            espressoCore      : "com.android.support.test.espresso:espresso-core:$versions.espresso",
+            espressoContrib   : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+            espressoIntents   : "com.android.support.test.espresso:espresso-intents:$versions.espresso",
+            espressoAcc       : "com.android.support.test.espresso:espresso-accessibility:$versions.espresso",
+            espressoIdle      : "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso",
+            espressoConcurrent: "com.android.support.test.espresso.idling:idling-concurrent:$versions.espresso",
+            espressoNetIdle   : "com.android.support.test.espresso.idling:idling-net:$versions.espresso",
+            testRunner        : "com.android.support.test:runner:$versions.testRunner",
+            testRules         : "com.android.support.test:rules:$versions.testRunner",
+            rxIdler           : "com.squareup.rx.idler:rx2-idler:$versions.rxIdler",
+    ] + mockito
+
+    timber = "com.jakewharton.timber:timber:$versions.timber"
+
+    dagger = "com.google.dagger:dagger:$versions.dagger"
+    daggerAndroid = "com.google.dagger:dagger-android:$versions.dagger"
+    daggerAndroidSupport = "com.google.dagger:dagger-android-support:$versions.dagger"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+    daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+    supportLibs = supportDeps.values()
+    kotlinLibs = kotlinDeps.values()
+    networkLibs = retrofit.values() + okHttp.values() + moshi.values()
+    rxJavaLibs = rxJava.values()
+    otherLibs = [timber, dagger, daggerAndroid, daggerAndroidSupport]
+
+    annotationProcessorLibs = [daggerCompiler, daggerAndroidProcessor]
+
+    unitTestLibs = unitTest.values()
+    androidTestsLibs = androidTests.values() + supportLibs
+}
