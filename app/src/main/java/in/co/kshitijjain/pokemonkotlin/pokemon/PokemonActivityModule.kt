@@ -11,6 +11,22 @@ import retrofit2.Retrofit
 class PokemonActivityModule {
 
     @Provides
+    fun provideRetrofit(): Retrofit {
+        return Retrofit.Builder()
+                .build()
+    }
+
+    @Provides
+    fun moshi(): Moshi {
+        return Moshi.Builder().build()
+    }
+
+    @Provides
+    fun pokemonConverter() : PokemonConverter {
+        return PokemonConverter()
+    }
+
+    @Provides
     fun pokemonFetcher(
             retrofit: Retrofit,
             moshi: Moshi,

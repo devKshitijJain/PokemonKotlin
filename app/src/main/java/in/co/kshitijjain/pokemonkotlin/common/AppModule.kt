@@ -11,7 +11,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun Context(application: Application): Context {
+    fun context(application: Application): Context {
         return application
     }
 }
