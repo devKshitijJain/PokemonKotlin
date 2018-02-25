@@ -31,8 +31,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation supportLibs
     implementation kotlinLibs
-    implementation networkLibs
-    implementation rxJavaLibs
+    api rxJavaLibs
     implementation otherLibs
 
     // APT dependencies

@@ -5,6 +5,7 @@ import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
 
 @Module
@@ -13,6 +14,8 @@ class PokemonActivityModule {
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
+                .baseUrl("https://pokeapi.co/")
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
     }
 
@@ -35,8 +38,14 @@ class PokemonActivityModule {
     }
 
     @Provides
-    fun pokemonViewStateConverter(): PokemonViewStateConverter {
-        return PokemonViewStateConverter()
+    fun resultViewStateConverter() : ResultViewStateConverter{
+        return ResultViewStateConverter()
+    }
+
+    @Provides
+    fun pokemonViewStateConverter(pokemonResultViewStateConverter: ResultViewStateConverter)
+            : PokemonViewStateConverter {
+        return PokemonViewStateConverter(pokemonResultViewStateConverter)
     }
 
     @Provides

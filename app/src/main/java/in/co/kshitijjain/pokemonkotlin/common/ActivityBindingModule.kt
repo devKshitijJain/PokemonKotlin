@@ -11,5 +11,4 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector(modules = [(PokemonActivityModule::class)])
     abstract fun bindMainActivity(): PokemonActivity
-
 }
