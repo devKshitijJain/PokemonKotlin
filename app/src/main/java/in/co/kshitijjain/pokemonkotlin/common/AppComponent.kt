@@ -13,7 +13,8 @@ import dagger.BindsInstance
     (AppModule::class),
     (AndroidInjectionModule::class),
     (AndroidSupportInjectionModule::class),
-    (ActivityBindingModule::class)])
+    (ActivityBindingModule::class),
+    (NetworkModule::class)])
 interface AppComponent {
 
     @Component.Builder

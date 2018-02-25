@@ -32,6 +32,7 @@ dependencies {
     implementation supportLibs
     implementation kotlinLibs
     api rxJavaLibs
+    api networkLibs
     implementation otherLibs
 
     // APT dependencies
