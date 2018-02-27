@@ -26,9 +26,12 @@ class PokemonViewStateUseCase(
     }
 
     fun loadFromNetwork(): Completable {
+        val loading = PokemonViewState.empty().toLoading()
         return pokemonFetcher.loadFromNetwork(20)
                 .toObservable()
                 .map(viewStateConverter)
+                .startWith(loading)
+                .compose(PokemonViewStateErrorConverter(Observable.just(loading)))
                 .flatMapCompletable(saveViewState)
                 .compose(schedulingStrategyFactory.create<PokemonViewState>())
     }

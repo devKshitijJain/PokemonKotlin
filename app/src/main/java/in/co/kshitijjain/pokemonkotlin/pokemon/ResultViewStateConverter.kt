@@ -4,8 +4,7 @@ import retrofit2.Converter
 
 class ResultViewStateConverter : Converter<Result, ResultViewState> {
     override fun convert(result: Result): ResultViewState {
-        return ResultViewState.create(result.url,
-                getCapitalizedNameFrom(result.name),
+        return ResultViewState.create(getCapitalizedNameFrom(result.name),
                 getImageNumberFrom(result.url))
     }
 

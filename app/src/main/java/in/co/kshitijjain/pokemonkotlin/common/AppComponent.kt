@@ -1,5 +1,6 @@
 package `in`.co.kshitijjain.pokemonkotlin.common
 
+import `in`.co.kshitijjain.pokemonkotlin.common.base.ImageLoaderModule
 import android.app.Application
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -14,7 +15,8 @@ import dagger.BindsInstance
     (AndroidInjectionModule::class),
     (AndroidSupportInjectionModule::class),
     (ActivityBindingModule::class),
-    (NetworkModule::class)])
+    (NetworkModule::class),
+    (ImageLoaderModule::class)])
 interface AppComponent {
 
     @Component.Builder

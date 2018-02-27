@@ -42,6 +42,10 @@ dependencies {
     kaptAndroidTest daggerCompiler
     kaptAndroidTest daggerAndroidProcessor
 
+    //AutoValue
+    compileOnly autoValue
+    annotationProcessor autoValue
+
     testImplementation unitTestLibs
     androidTestImplementation androidTestsLibs
     testImplementation unitTestLibs

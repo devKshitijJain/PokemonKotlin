@@ -4,13 +4,15 @@ import android.util.Log
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign
 
-class PokemonPresenter(private val useCase: PokemonViewStateUseCase) {
+class PokemonPresenter(private val useCase: PokemonViewStateUseCase,
+                       private val pokemonDisplayer: PokemonDisplayer) {
 
     private val disposables = CompositeDisposable()
 
     fun startPresenting() {
         disposables += useCase.observeViewState().subscribe({
-            Log.d("HELLO", it.toString())
+            Log.d("Sfjkhdkshfdas", it.toString())
+            pokemonDisplayer.display(it)
         })
         disposables += (useCase.loadFromNetwork().subscribe())
     }

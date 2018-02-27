@@ -19,7 +19,9 @@ ext {
             leakcanary   : '1.5.4',
             multiDex     : '1.0.2',
             mockitoKotlin: '1.5.0',
-            rxIdler      : '0.9.0'
+            rxIdler      : '0.9.0',
+            autoValue    : '1.5',
+            glide        : '4.6.1'
     ]
 
     mockito = [mockito: "org.mockito:mockito-core:$versions.mockito"]
@@ -34,6 +36,8 @@ ext {
             supportAnnotation: "com.android.support:support-annotations:$versions.support",
             multiDex         : "com.android.support:multidex:$versions.multiDex"
     ]
+
+    autoValue = "com.google.auto.value:auto-value:${versions.autoValue}"
 
     kotlinDeps = [
             kotlinCore: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
@@ -93,13 +97,16 @@ ext {
     daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
     daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$versions.dagger"
 
+    glide = "com.github.bumptech.glide:glide:$versions.glide"
+    glideProcessor = "com.github.bumptech.glide:compiler:$versions.glide"
+
     supportLibs = supportDeps.values()
     kotlinLibs = kotlinDeps.values()
     networkLibs = retrofit.values() + okHttp.values() + moshi.values()
     rxJavaLibs = rxJava.values()
-    otherLibs = [timber, dagger, daggerAndroid, daggerAndroidSupport]
+    otherLibs = [timber, dagger, daggerAndroid, daggerAndroidSupport, glide]
 
-    annotationProcessorLibs = [daggerCompiler, daggerAndroidProcessor]
+    annotationProcessorLibs = [daggerCompiler, daggerAndroidProcessor, glideProcessor]
 
     unitTestLibs = unitTest.values()
     androidTestsLibs = androidTests.values() + supportLibs
