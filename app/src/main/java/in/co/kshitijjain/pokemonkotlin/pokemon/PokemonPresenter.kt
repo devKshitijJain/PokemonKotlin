@@ -11,9 +11,8 @@ class PokemonPresenter(private val useCase: PokemonViewStateUseCase,
     private val disposables = CompositeDisposable()
 
     fun startPresenting() {
-        disposables += useCase.observeViewState().subscribe({
-            Log.d("Sfjkhdkshfdas", it.toString())
-            pokemonDisplayer.display(it)
+        disposables += useCase.observeViewState().subscribe({ pokemonViewState ->
+            pokemonDisplayer.display(pokemonViewState)
         })
         disposables += (useCase.loadFromNetwork().subscribe())
     }

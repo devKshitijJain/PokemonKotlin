@@ -1,8 +1,5 @@
 package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
-import `in`.co.kshitijjain.pokemonkotlin.pokemon.AutoValue_PokemonViewState_Error
-import `in`.co.kshitijjain.pokemonkotlin.pokemon.AutoValue_PokemonViewState_Idle
-import `in`.co.kshitijjain.pokemonkotlin.pokemon.AutoValue_PokemonViewState_Loading
 import com.google.auto.value.AutoValue
 
 abstract class PokemonViewState {

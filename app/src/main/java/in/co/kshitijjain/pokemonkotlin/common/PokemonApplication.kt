@@ -1,5 +1,6 @@
 package `in`.co.kshitijjain.pokemonkotlin.common
 
+import `in`.co.kshitijjain.pokemonkotlin.common.di.DaggerAppComponent
 import android.app.Activity
 import android.app.Application
 import android.content.Context

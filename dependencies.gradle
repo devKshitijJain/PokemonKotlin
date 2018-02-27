@@ -21,11 +21,16 @@ ext {
             mockitoKotlin: '1.5.0',
             rxIdler      : '0.9.0',
             autoValue    : '1.5',
-            glide        : '4.6.1'
+            picasso      : '2.5.2'
     ]
 
-    mockito = [mockito: "org.mockito:mockito-core:$versions.mockito"]
-    junit = [junit: "junit:junit:$versions.junit"]
+    mockito = [
+            mockito: "org.mockito:mockito-core:$versions.mockito"
+    ]
+
+    junit = [
+            junit: "junit:junit:$versions.junit"
+    ]
 
     supportDeps = [
             cardView         : "com.android.support:cardview-v7:$versions.support",
@@ -37,7 +42,9 @@ ext {
             multiDex         : "com.android.support:multidex:$versions.multiDex"
     ]
 
-    autoValue = "com.google.auto.value:auto-value:${versions.autoValue}"
+    autoValue = [
+            autoValue: "com.google.auto.value:auto-value:${versions.autoValue}"
+    ]
 
     kotlinDeps = [
             kotlinCore: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
@@ -61,6 +68,10 @@ ext {
 
     moshi = [
             moshi: "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+    ]
+
+    timber = [
+            timber: "com.jakewharton.timber:timber:$versions.timber"
     ]
 
     unitTest = [
@@ -89,24 +100,31 @@ ext {
             rxIdler           : "com.squareup.rx.idler:rx2-idler:$versions.rxIdler",
     ] + mockito
 
-    timber = "com.jakewharton.timber:timber:$versions.timber"
+    dagger = [
+            daggerLibrary         : "com.google.dagger:dagger:$versions.dagger",
+            daggerAndroid         : "com.google.dagger:dagger-android:$versions.dagger",
+            daggerAndroidSupport  : "com.google.dagger:dagger-android-support:$versions.dagger",
+            daggerCompiler        : "com.google.dagger:dagger-compiler:$versions.dagger",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$versions.dagger"
+    ]
 
-    dagger = "com.google.dagger:dagger:$versions.dagger"
-    daggerAndroid = "com.google.dagger:dagger-android:$versions.dagger"
-    daggerAndroidSupport = "com.google.dagger:dagger-android-support:$versions.dagger"
-    daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
-    daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$versions.dagger"
-
-    glide = "com.github.bumptech.glide:glide:$versions.glide"
-    glideProcessor = "com.github.bumptech.glide:compiler:$versions.glide"
+    picasso = [
+            picassoLibrary: "com.squareup.picasso:picasso:$versions.picasso"
+    ]
 
     supportLibs = supportDeps.values()
     kotlinLibs = kotlinDeps.values()
     networkLibs = retrofit.values() + okHttp.values() + moshi.values()
     rxJavaLibs = rxJava.values()
-    otherLibs = [timber, dagger, daggerAndroid, daggerAndroidSupport, glide]
+    otherLibs = [timber.values(),
+                 dagger.daggerLibrary,
+                 dagger.daggerAndroid,
+                 dagger.daggerAndroidSupport,
+                 picasso.picassoLibrary]
+    autoValue = autoValue.values()
 
-    annotationProcessorLibs = [daggerCompiler, daggerAndroidProcessor, glideProcessor]
+    annotationProcessorLibs = [dagger.daggerCompiler,
+                               dagger.daggerAndroidProcessor]
 
     unitTestLibs = unitTest.values()
     androidTestsLibs = androidTests.values() + supportLibs
