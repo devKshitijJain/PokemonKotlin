@@ -3,7 +3,7 @@ package `in`.co.kshitijjain.pokemonkotlin.pokemon.di
 import `in`.co.kshitijjain.pokemonkotlin.R
 import `in`.co.kshitijjain.pokemonkotlin.common.ImageLoader
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.*
-import `in`.co.kshitijjain.pokemonkotlin.pokemon.adapter.PokemonAdapter
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.PokemonAdapter
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.*
 import `in`.co.kshitijjain.pokemonkotlin.rx.AndroidSchedulingStrategyFactory
 import android.support.v7.widget.LinearLayoutManager

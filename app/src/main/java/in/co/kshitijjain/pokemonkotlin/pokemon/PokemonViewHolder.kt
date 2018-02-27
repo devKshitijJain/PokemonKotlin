@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon.holder
+package `in`.co.kshitijjain.pokemonkotlin.pokemon
 
 import `in`.co.kshitijjain.pokemonkotlin.R
 import android.support.v7.widget.RecyclerView
