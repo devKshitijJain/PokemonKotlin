@@ -37,10 +37,10 @@ dependencies {
 
     // APT dependencies
     kapt annotationProcessorLibs
-    kaptTest daggerCompiler
-    kaptTest daggerAndroidProcessor
-    kaptAndroidTest daggerCompiler
-    kaptAndroidTest daggerAndroidProcessor
+    kaptTest dagger.daggerCompiler
+    kaptTest dagger.daggerAndroidProcessor
+    kaptAndroidTest dagger.daggerCompiler
+    kaptAndroidTest dagger.daggerAndroidProcessor
 
     //AutoValue
     compileOnly autoValue

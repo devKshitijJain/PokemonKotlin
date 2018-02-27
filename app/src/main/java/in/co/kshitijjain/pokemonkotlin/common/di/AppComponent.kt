@@ -2,11 +2,11 @@ package `in`.co.kshitijjain.pokemonkotlin.common.di
 
 import `in`.co.kshitijjain.pokemonkotlin.common.PokemonApplication
 import android.app.Application
+import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
-import dagger.BindsInstance
 
 
 @Singleton

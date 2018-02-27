@@ -6,9 +6,10 @@ import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.ResultViewState
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import java.util.ArrayList
+import java.util.*
 
-class PokemonAdapter(private val imageLoader: ImageLoader) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PokemonAdapter(private val imageLoader: ImageLoader) :
+        RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var viewStates = emptyList<ResultViewState>()
 

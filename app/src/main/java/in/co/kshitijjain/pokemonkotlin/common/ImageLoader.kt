@@ -21,8 +21,6 @@ interface ImageLoader {
 
         fun centerInside(): RequestBuilder
 
-        fun noCrossFade(): RequestBuilder
-
         fun into(imageView: ImageView)
     }
 
