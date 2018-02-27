@@ -7,9 +7,7 @@ class PokemonViewStateConverter(private val pokemonResultViewStateConverter: Res
     : Converter<Pokemon, PokemonViewState> {
     override fun apply(pokemon: Pokemon): PokemonViewState {
         val resultViewState = ArrayList<ResultViewState>()
-        pokemon.mapTo(resultViewState) {
-            pokemonResultViewStateConverter.convert(it)
-        }
+        pokemon.mapTo(resultViewState, pokemonResultViewStateConverter::convert)
         return PokemonViewState.create(resultViewState)
     }
 }
