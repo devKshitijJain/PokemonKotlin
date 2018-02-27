@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
 import com.squareup.moshi.JsonEncodingException
 import io.reactivex.Observable

@@ -1,6 +1,7 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.adapter.PokemonAdapter
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.ResultViewState
 import android.support.v7.widget.RecyclerView
 import android.view.View
 

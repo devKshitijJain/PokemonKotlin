@@ -2,7 +2,7 @@ package `in`.co.kshitijjain.pokemonkotlin.pokemon.adapter
 
 import `in`.co.kshitijjain.pokemonkotlin.R
 import `in`.co.kshitijjain.pokemonkotlin.common.ImageLoader
-import `in`.co.kshitijjain.pokemonkotlin.pokemon.ResultViewState
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.ResultViewState
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.holder.PokemonViewHolder
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

@@ -1,5 +1,6 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.model.Result
 import retrofit2.Converter
 
 class ResultViewStateConverter : Converter<Result, ResultViewState> {

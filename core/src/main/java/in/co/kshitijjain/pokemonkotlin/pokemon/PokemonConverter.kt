@@ -1,5 +1,8 @@
 package `in`.co.kshitijjain.pokemonkotlin.pokemon
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.model.ApiPokemon
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.model.Pokemon
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.model.Result
 import `in`.co.kshitijjain.pokemonkotlin.rx.Converter
 
 class PokemonConverter : Converter<ApiPokemon, Pokemon> {

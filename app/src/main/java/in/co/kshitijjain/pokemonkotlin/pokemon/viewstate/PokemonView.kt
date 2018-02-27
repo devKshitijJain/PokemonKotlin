@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
 import `in`.co.kshitijjain.pokemonkotlin.R
 import android.view.View

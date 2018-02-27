@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.model
 
 data class Pokemon(private val results: List<Result>) : Iterable<Result> {
 

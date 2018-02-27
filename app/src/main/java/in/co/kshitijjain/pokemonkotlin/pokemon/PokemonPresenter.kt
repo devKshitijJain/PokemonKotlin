@@ -1,5 +1,6 @@
 package `in`.co.kshitijjain.pokemonkotlin.pokemon
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonDisplayer
 import android.util.Log
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign

@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.common
+package `in`.co.kshitijjain.pokemonkotlin.common.di
 
 import android.app.Application
 import android.content.Context

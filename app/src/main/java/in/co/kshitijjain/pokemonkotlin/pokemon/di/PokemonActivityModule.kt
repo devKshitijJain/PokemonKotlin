@@ -1,21 +1,19 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.di
 
 import `in`.co.kshitijjain.pokemonkotlin.R
-import `in`.co.kshitijjain.pokemonkotlin.common.GlideImageLoader
 import `in`.co.kshitijjain.pokemonkotlin.common.ImageLoader
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.*
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.adapter.PokemonAdapter
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.*
 import `in`.co.kshitijjain.pokemonkotlin.rx.AndroidSchedulingStrategyFactory
-import android.app.Application
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
-import javax.inject.Singleton
 
 @Module
 class PokemonActivityModule {
@@ -34,7 +32,7 @@ class PokemonActivityModule {
     }
 
     @Provides
-    fun resultViewStateConverter() : ResultViewStateConverter{
+    fun resultViewStateConverter() : ResultViewStateConverter {
         return ResultViewStateConverter()
     }
 

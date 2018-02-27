@@ -1,20 +1,23 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.AutoValue_PokemonViewState_Error
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.AutoValue_PokemonViewState_Idle
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.AutoValue_PokemonViewState_Loading
 import com.google.auto.value.AutoValue
 
 abstract class PokemonViewState {
 
     abstract fun results(): List<ResultViewState>
 
-    abstract fun accept(visitor: PokemonViewState.Visitor)
+    abstract fun accept(visitor: Visitor)
 
-    open fun toLoading(): PokemonViewState.Loading {
-        return PokemonViewState.Builder(this)
+    open fun toLoading(): Loading {
+        return Builder(this)
                 .buildLoading()
     }
 
-    fun toError(type: PokemonViewState.Error.Type, cause: Throwable): PokemonViewState.Error {
-        return PokemonViewState.Builder(this)
+    fun toError(type: Error.Type, cause: Throwable): Error {
+        return Builder(this)
                 .buildError(type, cause)
     }
 
@@ -62,33 +65,33 @@ abstract class PokemonViewState {
         internal constructor(pokemonViewState: PokemonViewState)
                 : this(pokemonViewState.results())
 
-        internal fun buildIdle(): PokemonViewState.Idle {
+        internal fun buildIdle(): Idle {
             return AutoValue_PokemonViewState_Idle(results)
         }
 
-        internal fun buildLoading(): PokemonViewState.Loading {
+        internal fun buildLoading(): Loading {
             return AutoValue_PokemonViewState_Loading(results)
         }
 
-        internal fun buildError(type: PokemonViewState.Error.Type, cause: Throwable)
-                : PokemonViewState.Error {
+        internal fun buildError(type: Error.Type, cause: Throwable)
+                : Error {
             return AutoValue_PokemonViewState_Error(results, cause, type)
         }
     }
 
     interface Visitor {
 
-        fun visit(idle: PokemonViewState.Idle)
+        fun visit(idle: Idle)
 
-        fun visit(loading: PokemonViewState.Loading)
+        fun visit(loading: Loading)
 
-        fun visit(error: PokemonViewState.Error)
+        fun visit(error: Error)
     }
 
     companion object {
 
-        fun create(results: List<ResultViewState>): PokemonViewState.Idle {
-            return PokemonViewState.Builder(results)
+        fun create(results: List<ResultViewState>): Idle {
+            return Builder(results)
                     .buildIdle()
         }
 

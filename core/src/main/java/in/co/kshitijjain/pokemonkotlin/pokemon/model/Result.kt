@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.model
 
 data class Result(val url: String, val name: String) {
     companion object {

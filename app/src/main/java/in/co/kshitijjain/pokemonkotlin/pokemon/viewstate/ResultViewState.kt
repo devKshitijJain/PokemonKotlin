@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
 data class ResultViewState(val name :String, val imageUrl :String) {
     companion object {

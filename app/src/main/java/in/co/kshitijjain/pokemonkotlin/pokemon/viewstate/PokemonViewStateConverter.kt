@@ -1,5 +1,6 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.model.Pokemon
 import `in`.co.kshitijjain.pokemonkotlin.rx.Converter
 
 class PokemonViewStateConverter(private val pokemonResultViewStateConverter: ResultViewStateConverter)

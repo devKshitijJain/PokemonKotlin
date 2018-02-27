@@ -1,5 +1,6 @@
 package `in`.co.kshitijjain.pokemonkotlin.pokemon
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.model.Pokemon
 import com.squareup.moshi.Moshi
 import io.reactivex.Single
 import retrofit2.Retrofit

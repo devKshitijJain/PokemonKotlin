@@ -1,6 +1,6 @@
-package `in`.co.kshitijjain.pokemonkotlin.common
+package `in`.co.kshitijjain.pokemonkotlin.common.di
 
-import `in`.co.kshitijjain.pokemonkotlin.common.base.ImageLoaderModule
+import `in`.co.kshitijjain.pokemonkotlin.common.PokemonApplication
 import android.app.Application
 import dagger.Component
 import dagger.android.AndroidInjectionModule

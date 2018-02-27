@@ -1,4 +1,4 @@
-package `in`.co.kshitijjain.pokemonkotlin.common.base
+package `in`.co.kshitijjain.pokemonkotlin.common.di
 
 import `in`.co.kshitijjain.pokemonkotlin.common.GlideImageLoader
 import `in`.co.kshitijjain.pokemonkotlin.common.ImageLoader

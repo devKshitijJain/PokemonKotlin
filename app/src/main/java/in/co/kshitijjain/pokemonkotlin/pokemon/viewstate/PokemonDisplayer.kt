@@ -1,7 +1,9 @@
-package `in`.co.kshitijjain.pokemonkotlin.pokemon
+package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonView
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState
 import android.util.Log
-import `in`.co.kshitijjain.pokemonkotlin.pokemon.PokemonViewState.Error.Type.*
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState.Error.Type.*
 
 class PokemonDisplayer(private val pokemonView: PokemonView) {
     fun display(pokemonViewState: PokemonViewState?) {

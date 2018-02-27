@@ -1,5 +1,8 @@
 package `in`.co.kshitijjain.pokemonkotlin.pokemon
 
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewStateConverter
+import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewStateErrorConverter
 import `in`.co.kshitijjain.pokemonkotlin.rx.AndroidSchedulingStrategyFactory
 import io.reactivex.Completable
 import io.reactivex.CompletableSource
