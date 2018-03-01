@@ -10,7 +10,7 @@ import io.reactivex.Observable
 import io.reactivex.functions.Function
 import io.reactivex.subjects.BehaviorSubject
 
-class PokemonViewStateUseCase(
+open class PokemonViewStateUseCase(
         private val pokemonFetcher: PokemonFetcher,
         private val viewStateConverter: PokemonViewStateConverter,
         private val schedulingStrategyFactory: AndroidSchedulingStrategyFactory) {

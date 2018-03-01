@@ -3,7 +3,7 @@ package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState.Error.Type.*
 import android.util.Log
 
-class PokemonDisplayer(private val pokemonView: PokemonView) {
+open class PokemonDisplayer(private val pokemonView: PokemonView) {
     fun display(pokemonViewState: PokemonViewState?) {
         pokemonViewState?.accept(object : PokemonViewState.Visitor {
             override fun visit(idle: PokemonViewState.Idle) {
