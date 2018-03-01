@@ -3,15 +3,14 @@ package `in`.co.kshitijjain.pokemonkotlin.pokemon
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonDisplayer
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.ResultViewState
-import com.nhaarman.mockito_kotlin.mock
-import com.nhaarman.mockito_kotlin.verify
-import com.nhaarman.mockito_kotlin.whenever
+import com.nhaarman.mockito_kotlin.*
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.functions.Action
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -39,5 +38,15 @@ class PokemonPresenterTest {
         presenter.startPresenting()
 
         verify(displayer).display(idleViewState)
+    }
+
+    @Test
+    fun shouldObserveViewStatesBeforeLoadingFromNetworkAfterStartPresenting() {
+        presenter.startPresenting()
+
+        val inOrder = Mockito.inOrder(useCase)
+        inOrder.verify(useCase).observeViewState()
+        inOrder.verify(useCase).loadFromNetwork()
+        inOrder.verifyNoMoreInteractions()
     }
 }

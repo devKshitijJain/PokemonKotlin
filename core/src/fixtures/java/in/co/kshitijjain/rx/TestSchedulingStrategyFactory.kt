@@ -1,9 +1,10 @@
-package `in`.co.kshitijjain.pokemonkotlin.rx
+package `in`.co.kshitijjain.rx
 
+import `in`.co.kshitijjain.pokemonkotlin.rx.SchedulingStrategy
 import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
 
-class TestSchedulingStrategyFactory internal constructor(subscribingScheduler: Scheduler,
+open class TestSchedulingStrategyFactory internal constructor(subscribingScheduler: Scheduler,
                                                          observingScheduler: Scheduler)
     : SchedulingStrategy.Factory(subscribingScheduler, observingScheduler) {
     companion object {

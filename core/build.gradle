@@ -1,5 +1,10 @@
 apply plugin: 'kotlin'
-apply plugin: 'kotlin-kapt'
+
+sourceSets {
+    test {
+        java.srcDirs 'src/fixtures/java'
+    }
+}
 
 dependencies {
     implementation rxJavaLibs

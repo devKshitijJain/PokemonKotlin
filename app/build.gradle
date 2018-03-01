@@ -27,6 +27,17 @@ android {
     }
 }
 
+android {
+    sourceSets {
+        test {
+            java.srcDirs project(':core').file('src/fixtures/java')
+        }
+        test {
+            java.srcDirs 'src/fixtures/java'
+        }
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation supportLibs
