@@ -9,4 +9,8 @@ sourceSets {
 dependencies {
     implementation rxJavaLibs
     implementation networkLibs
+    testImplementation unitTestLibs
+
+    //Google Truth
+    testCompile googleTruth.truth
 }

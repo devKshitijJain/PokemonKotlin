@@ -1,7 +1,7 @@
 package `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate
 
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState.Error.Type.*
-import android.util.Log
+import timber.log.Timber
 
 open class PokemonDisplayer(private val pokemonView: PokemonView) {
     fun display(pokemonViewState: PokemonViewState?) {
@@ -20,7 +20,7 @@ open class PokemonDisplayer(private val pokemonView: PokemonView) {
             override fun visit(error: PokemonViewState.Error) {
                 pokemonView.hideLoading()
                 showError(error)
-                Log.d("ERROR --> ", "Showing error state due to an exception: " + error.cause())
+                Timber.d(error.cause())
             }
         })
     }

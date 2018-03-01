@@ -59,7 +59,9 @@ dependencies {
 
     testImplementation unitTestLibs
     androidTestImplementation androidTestsLibs
-    testImplementation unitTestLibs
+
+    //Google Truth
+    testCompile googleTruth.truth
 
     // Use Core Inside APP
     implementation project(':core')
