@@ -9,7 +9,6 @@ import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.functions.Action
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -30,8 +29,8 @@ class PokemonPresenterTest {
 
     @Before
     fun setUp() {
-        whenever(useCase.loadFromNetwork()).thenReturn(Completable.fromAction(refreshAction))
         whenever(useCase.observeViewState()).thenReturn(Observable.just(idleViewState))
+        whenever(useCase.loadFromNetwork()).thenReturn(Completable.fromAction(refreshAction))
         presenter = PokemonPresenter(useCase, displayer)
     }
 
