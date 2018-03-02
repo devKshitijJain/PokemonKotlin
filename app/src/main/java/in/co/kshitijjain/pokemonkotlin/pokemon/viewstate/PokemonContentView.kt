@@ -17,6 +17,7 @@ class PokemonContentView(private val recyclerView: RecyclerView,
     }
 
     fun hide() {
+        pokemonAdapter.setViewStates(emptyList())
         recyclerView.visibility = View.GONE
     }
 }

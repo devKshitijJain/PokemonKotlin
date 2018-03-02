@@ -8,14 +8,14 @@ import io.reactivex.functions.Function
 import retrofit2.HttpException
 import java.io.IOException
 
-class PokemonViewStateErrorConverter(private val cachedViewStateObservable
-                                     : Observable<PokemonViewState>)
+class PokemonViewStateErrorConverter(private val cachedViewState
+                                     : PokemonViewState)
     : ObservableTransformer<PokemonViewState, PokemonViewState> {
 
     override fun apply(upstream: Observable<PokemonViewState>): ObservableSource<PokemonViewState> {
         return upstream.onErrorResumeNext(Function<Throwable,
                 ObservableSource<PokemonViewState>> { throwable ->
-            cachedViewStateObservable.map<PokemonViewState>(toError(throwable))
+            Observable.just(cachedViewState).map(toError(throwable))
         })
     }
 
