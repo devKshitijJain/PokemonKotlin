@@ -14,9 +14,7 @@ import javax.inject.Singleton
     (AppModule::class),
     (AndroidInjectionModule::class),
     (AndroidSupportInjectionModule::class),
-    (ActivityBindingModule::class),
-    (NetworkModule::class),
-    (ImageLoaderModule::class)])
+    (ActivityBindingModule::class)])
 interface AppComponent {
 
     @Component.Builder

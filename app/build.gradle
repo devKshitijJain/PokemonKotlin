@@ -25,9 +25,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
-android {
     sourceSets {
         test {
             java.srcDirs project(':core').file('src/fixtures/java')
@@ -65,6 +63,8 @@ dependencies {
 
     // Use Core Inside APP
     implementation project(':core')
+
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
 }
 
 tasks.matching { it instanceof Test }.all {
