@@ -3,12 +3,10 @@ package `in`.co.kshitijjain.pokemonkotlin.pokemon
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewStateConverter
 import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewStateErrorConverter
-import `in`.co.kshitijjain.pokemonkotlin.rx.AndroidSchedulingStrategyFactory
 import `in`.co.kshitijjain.pokemonkotlin.rx.SchedulingStrategy
 import io.reactivex.Completable
 import io.reactivex.CompletableSource
 import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.functions.Function
 import io.reactivex.subjects.BehaviorSubject
 
@@ -36,7 +34,7 @@ class PokemonViewStateUseCase(
                 .toObservable()
                 .map(viewStateConverter)
                 .startWith(loading)
-                .compose(PokemonViewStateErrorConverter(Observable.just(loading)))
+                .compose(PokemonViewStateErrorConverter(loading))
                 .flatMapCompletable(saveViewState)
                 .compose(schedulingStrategyFactory.create<PokemonViewState>())
     }

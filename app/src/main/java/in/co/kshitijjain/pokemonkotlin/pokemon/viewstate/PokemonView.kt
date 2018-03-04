@@ -6,7 +6,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 
 class PokemonView(private val pokemonContentView: PokemonContentView,
-                  private val errorText: TextView,
+                  private val errorTextView: TextView,
                   private val progressBar: ProgressBar) {
 
     companion object {
@@ -34,21 +34,21 @@ class PokemonView(private val pokemonContentView: PokemonContentView,
     }
 
     fun hideError() {
-        errorText.visibility = View.GONE
+        errorTextView.visibility = View.GONE
     }
 
     fun showConnectionError() {
-        errorText.visibility = View.VISIBLE
-        errorText.text = errorText.context.getString(R.string.connection_error_occurred)
+        errorTextView.visibility = View.VISIBLE
+        errorTextView.setText(R.string.connection_error_occurred)
     }
 
     fun showServerError() {
-        errorText.visibility = View.VISIBLE
-        errorText.text = progressBar.context.getString(R.string.server_error_occurred)
+        errorTextView.visibility = View.VISIBLE
+        errorTextView.setText(R.string.server_error_occurred)
     }
 
     fun showGenericError() {
-        errorText.visibility = View.VISIBLE
-        errorText.text = progressBar.context.getString(R.string.generic_error_occurred)
+        errorTextView.visibility = View.VISIBLE
+        errorTextView.setText(R.string.generic_error_occurred)
     }
 }
