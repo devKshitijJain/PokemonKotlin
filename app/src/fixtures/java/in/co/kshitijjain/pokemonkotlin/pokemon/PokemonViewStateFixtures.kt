@@ -8,15 +8,15 @@ class PokemonViewStateFixtures {
 
     private val resultViewStates = ArrayList<ResultViewState>()
 
-    fun withResultViewState(resultViewState: ResultViewState): PokemonViewStateFixtures {
-        resultViewStates.add(resultViewState)
-        return this
-    }
-
     companion object {
         fun aPokemonViewState(): PokemonViewStateFixtures {
             return PokemonViewStateFixtures()
         }
+    }
+
+    fun withResultViewState(resultViewState: ResultViewState): PokemonViewStateFixtures {
+        resultViewStates.add(resultViewState)
+        return this
     }
 
     fun toIdle(): PokemonViewState.Idle {
