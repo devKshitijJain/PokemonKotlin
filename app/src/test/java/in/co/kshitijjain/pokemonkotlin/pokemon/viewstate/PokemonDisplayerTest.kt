@@ -14,7 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner
 class PokemonDisplayerTest {
 
     private val view: PokemonView = mock()
-    private val throwable : Throwable = mock()
+    private val throwable: Throwable = mock()
 
     private lateinit var displayer: PokemonDisplayer
 
@@ -25,7 +25,9 @@ class PokemonDisplayerTest {
 
     @Test
     fun shouldShowContentWhenViewStateIsIdle() {
-        val pokemonViewState = aPokemonViewState().toIdle()
+        val pokemonViewState = aPokemonViewState()
+                .withResultViewState(ResultViewState.create("name", "url"))
+                .toIdle()
 
         displayer.display(pokemonViewState)
 

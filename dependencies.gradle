@@ -20,7 +20,6 @@ ext {
             multiDex     : '1.0.2',
             mockitoKotlin: '1.5.0',
             rxIdler      : '0.9.0',
-            autoValue    : '1.5',
             glide        : '4.6.1',
             truth        : '0.39'
     ]
@@ -41,10 +40,6 @@ ext {
             recyclerView     : "com.android.support:recyclerview-v7:$versions.support",
             supportAnnotation: "com.android.support:support-annotations:$versions.support",
             multiDex         : "com.android.support:multidex:$versions.multiDex"
-    ]
-
-    autoValue = [
-            autoValue: "com.google.auto.value:auto-value:${versions.autoValue}"
     ]
 
     kotlinDeps = [
@@ -127,7 +122,6 @@ ext {
                  dagger.daggerAndroid,
                  dagger.daggerAndroidSupport,
                  glide.glideLibrary]
-    autoValue = autoValue.values()
 
     annotationProcessorLibs = [dagger.daggerCompiler,
                                dagger.daggerAndroidProcessor,
