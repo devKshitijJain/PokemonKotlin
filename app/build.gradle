@@ -51,20 +51,14 @@ dependencies {
     kaptAndroidTest dagger.daggerCompiler
     kaptAndroidTest dagger.daggerAndroidProcessor
 
-    //AutoValue
-    compileOnly autoValue
-    annotationProcessor autoValue
-
     testImplementation unitTestLibs
     androidTestImplementation androidTestsLibs
 
     //Google Truth
     testCompile googleTruth.truth
 
-    // Use Core Inside APP
+    // Use Core Inside App
     implementation project(':core')
-
-    testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
 }
 
 tasks.matching { it instanceof Test }.all {
