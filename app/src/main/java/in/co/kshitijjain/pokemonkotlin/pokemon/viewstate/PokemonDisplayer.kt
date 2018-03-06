@@ -4,8 +4,8 @@ import `in`.co.kshitijjain.pokemonkotlin.pokemon.viewstate.PokemonViewState.Erro
 import timber.log.Timber
 
 open class PokemonDisplayer(private val pokemonView: PokemonView) {
-    fun display(pokemonViewState: PokemonViewState?) {
-        pokemonViewState?.accept(object : PokemonViewState.Visitor {
+    fun display(pokemonViewState: PokemonViewState) {
+        pokemonViewState.accept(object : PokemonViewState.Visitor {
             override fun visit(idle: PokemonViewState.Idle) {
                 pokemonView.hideLoading()
                 pokemonView.showContent(idle.results())
