@@ -12,8 +12,8 @@ class PokemonFetcherIntegrationTest : BaseIntegrationTest() {
 
     @Before
     fun setUp() {
-        pokemonFetcher = PokemonFetcher.from(BaseIntegrationTest.retrofit,
-                BaseIntegrationTest.moshi, BaseIntegrationTest.pokemonConverter)
+        pokemonFetcher = PokemonFetcher.from(retrofit,
+                moshi, pokemonConverter)
     }
 
     @Test
